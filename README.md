@@ -2,6 +2,9 @@
 
 Puppet module to manage nsswitch that optionally allows for LDAP.
 
+
+###### forked from ghoneycutt/puppet-module-nsswitch
+
 ===
 
 # Compatibility
