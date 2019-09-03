@@ -1,37 +1,30 @@
-# This file is being maintained by Puppet.
-# DO NOT EDIT
+# Managed by Puppet.
+#######################
+# /etc/nsswitch.conf
+#
+# Example configuration of GNU Name Service Switch functionality.
+# If you have the `glibc-doc-reference' and `info' packages installed, try:
+# `info libc "Name Service Switch"' for information about this file.
 
-passwd:     <%= @passwd_real %><% if @ensure_ldap == 'present' %> ldap<% end %><% if @ensure_vas == 'present' %> <%= @vas_nss_module_passwd %><% end %>
-shadow:     <%= @shadow_real %><% if @ensure_ldap == 'present' %> ldap<% end %>
-group:      <%= @group_real %><% if @ensure_ldap == 'present' %> ldap<% end %><% if @ensure_vas == 'present' %> <%= @vas_nss_module_group %><% end %>
-
-sudoers:    <%= @sudoers_real %><% if @ensure_ldap == 'present' %> ldap<% end %>
-
-hosts:      <%= @hosts_real %>
-
-bootparams: <%= @bootparams_real %>
-ethers:     <%= @ethers_real %>
-netmasks:   files
-networks:   files
-protocols:  <%= @protocols_real -%><% if @ensure_ldap == 'present' %> ldap<% end %>
-rpc:        <%= @rpc_real %>
-services:   <%= @services_real %><% if @ensure_ldap == 'present' %> ldap<% end %><% if @ensure_vas == 'present' %><% if @vas_nss_module_services != nil %> <%= @vas_nss_module_services %><% end %><% end %>
-netgroup:   <%= @netgroup_real %><% if @ensure_ldap == 'present' %> ldap<% end %><% if @ensure_vas == 'present' %><% if @vas_nss_module_netgroup != nil %> <%= @vas_nss_module_netgroup %><% end %><% end %>
-publickey:  <%= @publickey_real %>
-automount:  <%= @automount_real %><% if @ensure_ldap == 'present' %> ldap<% end %><% if @ensure_vas == 'present' %><% if @vas_nss_module_automount != nil %> <%= @vas_nss_module_automount %><% end %><% end %>
-aliases:    <%= @aliases_real %><% if @ensure_vas == 'present' %><% if @vas_nss_module_aliases != nil %> <%= @vas_nss_module_aliases %><% end %><% end %>
-<% if @nsswitch_ipnodes_real != nil -%>
-ipnodes:    <%= @nsswitch_ipnodes_real %>
-<% end -%>
-<% if @nsswitch_printers_real != nil -%>
-printers:   <%= @nsswitch_printers_real %>
-<% end -%>
-<% if @nsswitch_auth_attr_real != nil -%>
-auth_attr:  <%= @nsswitch_auth_attr_real %>
-<% end -%>
-<% if @nsswitch_prof_attr_real != nil -%>
-prof_attr:  <%= @nsswitch_prof_attr_real %>
-<% end -%>
-<% if @nsswitch_project_real != nil -%>
-project:    <%= @nsswitch_project_real %>
-<% end -%>
+<% if @passwd      -%><%="\npasswd:          " %><%=@passwd     .is_a?(Array) ? @passwd      .join(' ') : @passwd      %><% end -%>
+<% if @shadow      -%><%="\nshadow:          " %><%=@shadow     .is_a?(Array) ? @shadow      .join(' ') : @shadow      %><% end -%>
+<% if @group       -%><%="\ngroup:           " %><%=@group      .is_a?(Array) ? @group       .join(' ') : @group       %><% end -%>
+<% if @gshadow     -%><%="\ngshadow:         " %><%=@gshadow    .is_a?(Array) ? @gshadow     .join(' ') : @gshadow     %><% end -%>
+<% if @sudoers     -%><%="\nsudoers:         " %><%=@sudoers    .is_a?(Array) ? @sudoers     .join(' ') : @sudoers     %><% end -%>
+<% if @hosts       -%><%="\nhosts:           " %><%=@hosts      .is_a?(Array) ? @hosts       .join(' ') : @hosts       %><% end -%>
+<% if @bootparams  -%><%="\nbootparams:      " %><%=@bootparams .is_a?(Array) ? @bootparams  .join(' ') : @bootparams  %><% end -%>
+<% if @ethers      -%><%="\nethers:          " %><%=@ethers     .is_a?(Array) ? @ethers      .join(' ') : @ethers      %><% end -%>
+<% if @netmasks    -%><%="\nnetmasks:        " %><%=@netmasks   .is_a?(Array) ? @netmasks    .join(' ') : @netmasks    %><% end -%>
+<% if @networks    -%><%="\nnetworks:        " %><%=@networks   .is_a?(Array) ? @networks    .join(' ') : @networks    %><% end -%>
+<% if @protocols   -%><%="\nprotocols:       " %><%=@protocols  .is_a?(Array) ? @protocols   .join(' ') : @protocols   %><% end -%>
+<% if @rpc         -%><%="\nrpc:             " %><%=@rpc        .is_a?(Array) ? @rpc         .join(' ') : @rpc         %><% end -%>
+<% if @services    -%><%="\nservices:        " %><%=@services   .is_a?(Array) ? @services    .join(' ') : @services    %><% end -%>
+<% if @netgroup    -%><%="\nnetgroup:        " %><%=@netgroup   .is_a?(Array) ? @netgroup    .join(' ') : @netgroup    %><% end -%>
+<% if @publickey   -%><%="\npublickey:       " %><%=@publickey  .is_a?(Array) ? @publickey   .join(' ') : @publickey   %><% end -%>
+<% if @automount   -%><%="\nautomount:       " %><%=@automount  .is_a?(Array) ? @automount   .join(' ') : @automount   %><% end -%>
+<% if @aliases     -%><%="\naliases:         " %><%=@aliases    .is_a?(Array) ? @aliases     .join(' ') : @aliases     %><% end -%>
+<% if @ipnodes     -%><%="\nipnodes:         " %><%=@ipnodes    .is_a?(Array) ? @ipnodes     .join(' ') : @ipnodes     %><% end -%>
+<% if @printers    -%><%="\nprinters:        " %><%=@printers   .is_a?(Array) ? @printers    .join(' ') : @printers    %><% end -%>
+<% if @auth_attr   -%><%="\nauth_attr:       " %><%=@auth_attr  .is_a?(Array) ? @auth_attr   .join(' ') : @auth_attr   %><% end -%>
+<% if @prof_attr   -%><%="\nprof_attr:       " %><%=@prof_attr  .is_a?(Array) ? @prof_attr   .join(' ') : @prof_attr   %><% end -%>
+<% if @project     -%><%="\nproject:         " %><%=@project    .is_a?(Array) ? @project     .join(' ') : @project     %><% end -%>

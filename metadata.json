@@ -1,12 +1,12 @@
 {
-  "name": "ghoneycutt-nsswitch",
-  "version": "1.8.0",
-  "author": "ghoneycutt",
+  "name": "caherrera-nsswitch",
+  "version": "2.0.0",
+  "author": "Carlos Herrera",
   "summary": "Manage nsswitch",
   "license": "Apache-2.0",
-  "source": "git://github.com/ghoneycutt/puppet-module-nsswitch.git",
-  "project_page": "https://github.com/ghoneycutt/puppet-module-nsswitch",
-  "issues_url": "https://github.com/ghoneycutt/puppet-module-nsswitch/issues",
+  "source": "git://github.com/caherrera/puppet-module-nsswitch.git",
+  "project_page": "https://github.com/caherrera/puppet-module-nsswitch",
+  "issues_url": "https://github.com/caherrera/puppet-module-nsswitch/issues",
   "requirements": [
     {
       "name": "puppet",

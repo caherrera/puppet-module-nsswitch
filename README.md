@@ -1,6 +1,6 @@
 # puppet-module-nsswitch
 
-Puppet module to manage nsswitch that optionally allows for LDAP and VAS integration.
+Puppet module to manage nsswitch that optionally allows for LDAP.
 
 ===
 
@@ -29,110 +29,113 @@ Path to configuration file.
 
 - *Default*: `/etc/nsswitch.conf`
 
-ensure_ldap
------------
-Should LDAP be used? Valid values are 'absent' and 'present'
-
-- *Default*: 'absent'
-
-ensure_vas
+passwd
 ----------
-Should VAS (Quest Authentication Services) be used? Valid values are 'absent' and 'present'.
+String or Array accept values like compat, ldap, file or db
 
-- *Default*: 'absent'
+     
+shadow
+----------
+String or Array accept values like compat, ldap, file or db
 
-vas_nss_module
---------------
-Name of NSS module to use for VAS.
+     
+group
+----------
+String or Array accept values like compat, ldap, file or db
 
-- *Default*: 'vas4'
+      
+gshadow
+----------
+String or Array accept values like compat, ldap, file or db
 
-vas_nss_module_passwd
----------------------
-Source for vas to be included in the passwd database.
-
-- *Default*:'vas4'
-
-vas_nss_module_group
---------------------
-Source for vas to be included in the group database.
-
-- *Default*:'vas4'
-
-vas_nss_module_automount
-------------------------
-Source for vas to be included in the automount database.
-
-- *Default*:'nis'
-
-vas_nss_module_netgroup
------------------------
-Source for vas to be included in the netgroup database.
-
-- *Default*:'nis'
-
-vas_nss_module_aliases
-----------------------
-Source for vas to be included in the aliases database.
-
-- *Default*:''
-
-vas_nss_module_services
------------------------
-Source for vas to be included in the services database.
-
-- *Default*: ''
-
-protocols
----------
-Sources to be included in the protocols database.
-
-- *Default*: 'USE_DEFAULTS'
-
-ethers
-------
-Sources to be included in the ethers database.
-
-- *Default*: 'USE_DEFAULTS'
-
-rpc
----
-Sources to be included in the rpc database.
-
-- *Default*: 'USE_DEFAULTS'
-
-nsswitch_ipnodes
-----------------
-String of list of sources for ipnodes database. 'USE_DEFAULTS' allows the module to choose defaults based on the platform.
-
-- *Default*: 'USE_DEFAULTS'
-
-nsswitch_printers
------------------
-String of list of sources for printers database. 'USE_DEFAULTS' allows the module to choose defaults based on the platform.
-
-- *Default*: 'USE_DEFAULTS'
-
-nsswitch_auth_attr
-------------------
-String of list of sources for auth_attr database. 'USE_DEFAULTS' allows the module to choose defaults based on the platform.
-
-- *Default*: 'USE_DEFAULTS'
-
-nsswitch_prof_attr
-------------------
-String of list of sources for prof_attr database. 'USE_DEFAULTS' allows the module to choose defaults based on the platform.
-
-- *Default*: 'USE_DEFAULTS'
-
-nsswitch_project
-----------------
-String of list of sources for project database. 'USE_DEFAULTS' allows the module to choose defaults based on the platform.
-
-- *Default*: 'USE_DEFAULTS'
-
+    
 sudoers
--------
-String of list of sources to use for sudoers. 'USE_DEFAULTS' allows the module to choose defaults based on the platform.
+----------
+String or Array accept values like compat, ldap, file or db
 
-- *Default*: 'USE_DEFAULTS'
+    
+hosts
+----------
+String or Array accept values like compat, ldap, file or db
+
+      
+bootparams
+----------
+String or Array accept values like compat, ldap, file or db
+
+ 
+netmasks
+----------
+String or Array accept values like compat, ldap, file or db
+
+   
+networks
+----------
+String or Array accept values like compat, ldap, file or db
+
+   
+ethers
+----------
+String or Array accept values like compat, ldap, file or db
+
+     
+protocols
+----------
+String or Array accept values like compat, ldap, file or db
+
+  
+rpc
+----------
+String or Array accept values like compat, ldap, file or db
+
+        
+services
+----------
+String or Array accept values like compat, ldap, file or db
+
+   
+netgroup
+----------
+String or Array accept values like compat, ldap, file or db
+
+   
+publickey
+----------
+String or Array accept values like compat, ldap, file or db
+
+  
+automount
+----------
+String or Array accept values like compat, ldap, file or db
+
+  
+aliases
+----------
+String or Array accept values like compat, ldap, file or db
+
+    
+ipnodes
+----------
+String or Array accept values like compat, ldap, file or db
+
+    
+printers
+----------
+String or Array accept values like compat, ldap, file or db
+
+   
+auth_attr
+----------
+String or Array accept values like compat, ldap, file or db
+
+  
+prof_attr
+----------
+String or Array accept values like compat, ldap, file or db
+
+  
+project
+----------
+String or Array accept values like compat, ldap, file or db
+
+    
